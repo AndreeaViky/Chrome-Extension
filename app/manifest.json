@@ -1,0 +1,52 @@
+{
+  "background": {
+    "service_worker": "background.js"
+  },
+  "browser_action": {
+    "default_title": "Blindful Extension",
+    "default_popup": "popup/index.html"
+  },
+  "commands": {
+    "textToSpeech": {
+      "suggested_key": {
+        "windows": "Ctrl+Shift+P",
+        "mac": "Ctrl+Shift+P",
+        "chromeos": "Ctrl+Shift+P",
+        "linux": "Ctrl+Shift+P"
+      },
+      "description": "Text to Speech",
+      "global": true
+    },
+    "speechToText": {
+      "suggested_key": {
+        "windows": "Ctrl+Shift+Y",
+        "mac": "Ctrl+Shift+Y",
+        "chromeos": "Ctrl+Shift+Y",
+        "linux": "Ctrl+Shift+Y"
+      },
+      "global": true,
+      "description": "Speech to Text"
+    }
+  },
+  "description": "Extension from IT intern Hackathon 2024",
+  "manifest_version": 3,
+  "name": "Blindful Extension",
+  "permissions": ["webNavigation", "tabs", "activeTab"],
+  "version": "0.1",
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "recordings/Recording.mp3",
+        "recordings/Generating.mp3",
+        "recordings/Loading.mp3"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["textToSpeech.js", "speechToText.js", "bouncing.js", "numbers.js"]
+    }
+  ]
+}
