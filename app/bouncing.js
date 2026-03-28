@@ -1,16 +1,11 @@
+console.log("Bouncing.js is running");
+
 let timeoutId;
 
-function callFunction(param) {
-    // Clear the previous timeout
-    clearTimeout(timeoutId);
-
-    // Set a new timeout to call the function after 1000 ms
-    timeoutId = setTimeout(() => {
-        // Call the function with the parameter
-        text2speech({"inputs": param}).then((response) => {
-            var url = URL.createObjectURL(response);
-            var a = new Audio(url);
-            a.play();
-        });
-    }, 1000);
+// Debounced call to avoid flooding TTS while user navigates quickly
+function callFunction(text) {
+  clearTimeout(timeoutId);
+  timeoutId = setTimeout(() => {
+    text2speech(text);
+  }, 600); // 600ms debounce — fast enough to feel responsive
 }

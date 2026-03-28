@@ -1,30 +1,99 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blindful Extension</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 320px;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #0f0f1a;
+      color: #f0f0f0;
+      padding: 0;
+    }
+    .header {
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      padding: 20px;
+      border-bottom: 2px solid #e94560;
+      text-align: center;
+    }
+    .header h1 { font-size: 22px; color: #e94560; letter-spacing: 1px; }
+    .header p  { font-size: 12px; color: #aaa; margin-top: 4px; }
+    .content { padding: 16px; }
+    .section { margin-bottom: 16px; }
+    .section h2 { font-size: 13px; color: #e94560; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+    .shortcut-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid #1e1e30;
+      font-size: 13px;
+    }
+    .shortcut-row:last-child { border-bottom: none; }
+    .key {
+      background: #1e1e30;
+      border: 1px solid #e94560;
+      border-radius: 4px;
+      padding: 3px 8px;
+      font-size: 12px;
+      font-family: monospace;
+      color: #e94560;
+    }
+    .commands { background: #1a1a2e; border-radius: 8px; padding: 12px; margin-top: 8px; }
+    .command-item { font-size: 12px; color: #ccc; margin-bottom: 6px; padding-left: 8px; border-left: 2px solid #e94560; }
+    .command-item strong { color: #fff; }
+    .footer { text-align: center; font-size: 11px; color: #555; padding: 12px; }
+  </style>
+</head>
 <body>
-    <div id="options-outer">
-        <div id="options-inner">
-            <div id="options-page-title" class="page-title">Chrome Extension Template v1.0</div>
-            <div id="options-page-subtitle" class="page-subtitle">Configuration and Settings</div>
-            <div id="options-area">
-                <div class="control-group">
-                    <label class="control-label" for="favorite-movie-dropdown">Favorite Movie</label>
-                    <div class="controls">
-                        <select id="favorite-movie-dropdown" class="span5">
-                            <option value="Star Wars IV: A New Hope">Star Wars IV: A New Hope</option>
-                            <option value="Monthy Python: The Search for the Holy Grail">Monthy Python: The Search for
-                                the Holy Grail</option>
-                            <option vlaue="Star Trek II: The Wrath of Khan">Star Trek II: The Wrath of Khan</option>
-                            <option value="The Matrix">The Matrix</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <button id="save-options-button" class="btn btn-success">Save Options</button>
-        </div>
+  <div class="header">
+    <h1>👁️ Blindful</h1>
+    <p>Accessibility Navigation Extension</p>
+  </div>
+
+  <div class="content">
+    <div class="section">
+      <h2>⌨️ Keyboard Shortcuts</h2>
+      <div class="shortcut-row">
+        <span>Navigate elements</span>
+        <span class="key">Tab</span>
+      </div>
+      <div class="shortcut-row">
+        <span>Navigate backwards</span>
+        <span class="key">Shift+Tab</span>
+      </div>
+      <div class="shortcut-row">
+        <span>Activate element</span>
+        <span class="key">Enter</span>
+      </div>
+      <div class="shortcut-row">
+        <span>Toggle voice input</span>
+        <span class="key">Ctrl+Z</span>
+      </div>
+      <div class="shortcut-row">
+        <span>Text to Speech</span>
+        <span class="key">Ctrl+Shift+P</span>
+      </div>
     </div>
 
-    <!-- load javascript: unique html page javascript file -->
-    <script type="text/javascript" src="../js/options.js"></script>
-</body>
+    <div class="section">
+      <h2>🎤 Voice Commands (English)</h2>
+      <div class="commands">
+        <div class="command-item"><strong>"go to 5"</strong> — jump to element 5</div>
+        <div class="command-item"><strong>"next"</strong> — move to next element</div>
+        <div class="command-item"><strong>"previous"</strong> — move to previous element</div>
+        <div class="command-item"><strong>"click"</strong> — activate focused element</div>
+        <div class="command-item"><strong>"read page"</strong> — describe the page</div>
+        <div class="command-item"><strong>"scroll down"</strong> — scroll the page down</div>
+        <div class="command-item"><strong>"scroll up"</strong> — scroll the page up</div>
+        <div class="command-item"><strong>"stop"</strong> — stop speaking</div>
+      </div>
+    </div>
+  </div>
 
+  <div class="footer">Blindful v0.2 — Built for accessibility</div>
+</body>
 </html>
