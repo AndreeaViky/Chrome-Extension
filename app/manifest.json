@@ -2,7 +2,7 @@
   "background": {
     "service_worker": "background.js"
   },
-  "browser_action": {
+  "action": {
     "default_title": "Blindful Extension",
     "default_popup": "popup/index.html"
   },
@@ -28,25 +28,30 @@
       "description": "Speech to Text"
     }
   },
-  "description": "Extension from IT intern Hackathon 2024",
+  "description": "Blindful - Accessibility extension for visually impaired users",
   "manifest_version": 3,
   "name": "Blindful Extension",
-  "permissions": ["webNavigation", "tabs", "activeTab"],
-  "version": "0.1",
-  "web_accessible_resources": [
-    {
-      "resources": [
-        "recordings/Recording.mp3",
-        "recordings/Generating.mp3",
-        "recordings/Loading.mp3"
-      ],
-      "matches": ["<all_urls>"]
-    }
+  "version": "0.2",
+  "permissions": [
+    "webNavigation",
+    "tabs",
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
   ],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["textToSpeech.js", "speechToText.js", "bouncing.js", "numbers.js"]
+      "js": [
+        "numbers.js",
+        "parser.js",
+        "textToSpeech.js",
+        "speechToText.js",
+        "bouncing.js"
+      ],
+      "run_at": "document_idle"
     }
   ]
 }
