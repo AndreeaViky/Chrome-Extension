@@ -31,7 +31,7 @@
   "description": "Blindful - Accessibility extension for visually impaired users",
   "manifest_version": 3,
   "name": "Blindful Extension",
-  "version": "0.2",
+  "version": "0.3",
   "permissions": [
     "webNavigation",
     "tabs",
