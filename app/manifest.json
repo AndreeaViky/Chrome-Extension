@@ -45,11 +45,11 @@
     {
       "matches": ["<all_urls>"],
       "js": [
-        "numbers.js",
-        "parser.js",
-        "textToSpeech.js",
-        "speechToText.js",
-        "bouncing.js"
+        "content scripts/numbers.js",
+        "content scripts/parser.js",
+        "content scripts/textToSpeech.js",
+        "content scripts/speechToText.js",
+        "content scripts/bouncing.js"
       ],
       "run_at": "document_idle"
     }
